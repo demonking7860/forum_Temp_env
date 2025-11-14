@@ -1,0 +1,743 @@
+/* =========================================
+   Admin Panel & General Styles
+   ========================================= */
+
+/* 🔹 Updated CSS variables to match support ticket design */
+:root {
+  --brand-700: #0a3d4e;
+  --brand-600: #165b73;
+  --brand-500: #1a6985;
+  --brand-400: #2a90b8;
+  --brand-300: #62b7d5;
+
+  --surface: #ffffff;
+  --surface-alt: #f8fbfe;
+  --border: #e6eef6;
+
+  --text-900: #0f172a;
+  --text-700: #334155;
+  --text-600: #475569;
+  --text-500: #64748b;
+  --text-400: #94a3b8;
+
+  --radius-lg: 14px;
+  --radius-md: 10px;
+
+  --shadow-soft: 0 8px 28px rgba(16, 24, 40, 0.06);
+  --shadow-subtle: 0 2px 8px rgba(16, 24, 40, 0.04);
+
+  --status-open: #16a34a;
+  --status-in-progress: #f59e0b;
+  --status-resolved: #3b82f6;
+  --status-closed: #dc2626;
+
+  --user-message-bg: #e0f2fe;
+  --user-message-text: #0c4a6e;
+
+  /* Legacy admin variables for compatibility */
+  --admin-bg: #f9fafb;
+  --panel-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --admin-message-bg: #e0f2fe;
+  --admin-message-text: #0c4a6e;
+  --user-message-bg: #f3f4f6;
+  --user-message-text: #1f2937;
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--admin-bg);
+  font-family: "Inter", sans-serif;
+}
+
+.admin-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--panel-bg);
+}
+
+.admin-tab {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+}
+
+.admin-tab:hover {
+  background: #f3f4f6;
+}
+
+.admin-tab.active {
+  border-bottom: 3px solid #2563eb;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.admin-tab-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* =========================================
+   🔹 NEW: Modern Chat Message Styles
+   ========================================= */
+
+/* Main messages container with padding for alignment */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem; /* Adds space on left and right */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Desktop support ticket design for messages */
+@media (min-width: 1024px) {
+  .messages {
+    background: linear-gradient(180deg, #fff 0%, #fafdff 100%);
+    padding: 1rem 0.75rem;
+    gap: 0.25rem;
+  }
+}
+
+/* Date Divider */
+.date-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 1rem 0.5rem;
+}
+.date-divider::before,
+.date-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+.date-divider:not(:empty)::before {
+  margin-right: .5em;
+}
+.date-divider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+/* Flex container for each message row */
+.msg {
+  display: flex;
+  margin: 0.25rem 0;
+  width: 100%;
+}
+.msg.admin {
+  justify-content: flex-end; /* Admin messages on the right */
+}
+.msg.me {
+  justify-content: flex-start; /* User messages on the left */
+}
+
+/* Wrapper for bubble */
+.bubble-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+/* Chat Bubble Styling */
+.bubble {
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.15), 0 2px 4px rgba(16, 24, 40, 0.08);
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.bubble .text {
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+.bubble .time {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Admin bubble styles (left) */
+.bubble.admin {
+  background-color: var(--admin-message-bg);
+  color: var(--admin-message-text);
+  border-bottom-left-radius: 4px; /* "Tail" effect */
+}
+.bubble.admin .time {
+  text-align: left;
+}
+
+/* User bubble styles (right) */
+.bubble.me {
+  background-color: var(--user-message-bg);
+  color: var(--user-message-text);
+  border-bottom-right-radius: 4px; /* "Tail" effect */
+}
+.bubble.me .time {
+  text-align: right;
+}
+
+/* Desktop support ticket design for bubbles */
+@media (min-width: 1024px) {
+  /* Admin bubble (left) */
+  .bubble.admin {
+    background-color: var(--user-message-bg);
+    color: var(--user-message-text);
+    border-bottom-left-radius: var(--radius-lg);
+  }
+
+  /* User bubble (right) */
+  .bubble.me {
+    background-color: var(--surface-alt);
+    color: var(--text-700);
+    border-bottom-right-radius: var(--radius-lg);
+  }
+}
+
+/* Message item base styles */
+.message-item {
+  position: relative;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: var(--radius);
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+}
+
+/* Message status styles */
+.message-item.sending {
+  opacity: 0.8;
+}
+
+.message-item.failed {
+  border-left: 3px solid #ef4444;
+  background-color: #fef2f2;
+}
+
+/* Status indicators */
+.status-indicator {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.1rem 0.4rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+}
+
+.status-indicator.sending {
+  color: #f59e0b;
+  background-color: #fef3c7;
+}
+
+.status-indicator.failed {
+  color: #dc2626;
+  background-color: #fef2f2;
+}
+
+/* Retry button */
+.retry-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ef4444;
+  background: #dc2626;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.retry-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.1);
+}
+
+/* Reply input area */
+.message-input {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Input Container */
+.message-input .input_container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background: var(--surface);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.75rem;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.message-input .input_container:focus-within {
+  border-color: var(--brand-500);
+  box-shadow: 0 0 0 3px rgba(42, 144, 184, 0.1), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.message-input .reply_textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: none;
+  min-height: 40px;
+  max-height: 120px;
+  font-family: inherit;
+  color: var(--text-primary);
+}
+
+.message-input .reply_textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.message-input .reply_textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Modern Send Button */
+.message-input .send_btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, var(--brand-500), var(--brand-600));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(42, 144, 184, 0.25);
+  min-width: 80px;
+  justify-content: center;
+}
+
+.message-input .send_btn:hover:not(.disabled):not(.sending) {
+  background: linear-gradient(135deg, var(--brand-600), var(--brand-700));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(42, 144, 184, 0.35);
+}
+
+.message-input .send_btn:active:not(.disabled):not(.sending) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(42, 144, 184, 0.3);
+}
+
+.message-input .send_btn.disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.message-input .send_btn.sending {
+  background: var(--text-secondary);
+  cursor: wait;
+  transform: none;
+}
+
+.message-input .send_icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.message-input .send_btn:hover:not(.disabled):not(.sending) .send_icon {
+  transform: translateX(2px);
+}
+
+.message-input .send_text {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Sending Spinner */
+.message-input .sending_spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-input .spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile Send Button Responsive */
+@media (max-width: 767px) {
+  .message-input .input_container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.6rem;
+  }
+
+  .message-input .send_btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .message-input .send_text {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================
+   MOBILE RESPONSIVE DESIGN
+   ============================ */
+
+/* Hidden mobile elements */
+.hidden-mobile {
+  display: none !important;
+}
+
+/* Hidden desktop elements */
+@media (min-width: 1024px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* Admin Tickets Wrapper Layout */
+.admin-tickets-wrapper {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 1rem;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+/* Desktop support ticket design for admin tickets wrapper */
+@media (min-width: 1024px) {
+  /* When no ticket is selected, show full-screen ticket list */
+  .admin-tickets-wrapper:not(.ticket-selected) {
+    grid-template-columns: 1fr;
+  }
+
+  /* When ticket is selected, hide sidebar and make detail full width */
+  .admin-tickets-wrapper.ticket-selected {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ticket List Pane */
+.ticket-list-pane {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  height: calc(100vh - 200px);
+}
+
+/* Desktop support ticket design for ticket list pane */
+@media (min-width: 1024px) {
+  .ticket-list-pane {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    height: calc(100vh - 200px);
+  }
+
+  /* When no ticket is selected, make ticket list full width */
+  .admin-tickets-wrapper:not(.ticket-selected) .ticket-list-pane {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.ticket-list-pane.collapsed {
+  width: 320px;
+}
+
+.ticket-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+  height: 100%;
+}
+
+.ticket-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background: var(--panel-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ticket-item:hover {
+  background: #f9fafb;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.ticket-item.active {
+  border-color: #2563eb;
+  background: #eef2ff;
+}
+
+/* Desktop support ticket design for ticket items */
+@media (min-width: 1024px) {
+  .ticket-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 0.85rem;
+    background: #fff;
+    transition: background .12s ease, border-color .12s ease, transform .12s ease;
+  }
+
+  .ticket-item:hover {
+    background: var(--surface-alt);
+    transform: translateY(-1px);
+  }
+
+  .ticket-item.active {
+    border-color: var(--brand-300);
+    background: #f2faff;
+  }
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-header strong {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.OPEN {
+  background: #e6f0ff;
+  color: #1d4ed8;
+}
+
+.status-badge.IN_PROGRESS {
+  background: #fff7e6;
+  color: #f59e0b;
+}
+
+.status-badge.RESOLVED {
+  background: #e8fff1;
+  color: #16a34a;
+}
+
+.status-badge.CLOSED {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.snippet {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.pane-title {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pane-icon {
+  font-size: 1.2rem;
+}
+
+/* Ticket Detail Pane */
+.ticket-detail-pane {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  max-height: calc(100vh - 200px);
+  overflow: hidden;
+}
+
+/* Desktop support ticket design for ticket detail pane */
+@media (min-width: 1024px) {
+  .ticket-detail-pane {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ticket-detail-header button {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.ticket-detail-header button:hover {
+  background: #f3f4f6;
+}
+
+.ticket-detail-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.ticket-detail-header select {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+/* Mobile responsive grid */
+@media (max-width: 767px) {
+  .admin-tickets-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .mobile-tabs {
+    display: flex;
+  }
+
+  .admin-tickets-wrapper .ticket-list-pane,
+  .admin-tickets-wrapper .ticket-detail-pane {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .admin-tickets-wrapper .ticket-list-pane.hidden-mobile,
+  .admin-tickets-wrapper .ticket-detail-pane.hidden-mobile {
+    display: none;
+  }
+
+  .ticket-list-pane,
+  .ticket-detail-pane {
+    padding: 0.75rem;
+    min-height: 70vh;
+    max-height: calc(100vh - 200px);
+  }
+
+  .pane-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .ticket-item {
+    padding: 0.6rem 0.7rem;
+  }
+
+  .ticket-header strong {
+    font-size: 0.9rem;
+  }
+
+  .snippet {
+    font-size: 0.85rem;
+  }
+
+
+  .ticket-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .ticket-detail-header button {
+    align-self: flex-start;
+  }
+}
+
+/* Enhanced touch interactions for mobile */
+@media (max-width: 767px) {
+  .ticket-item,
+  .ticket-detail-header button {
+    min-height: 44px; /* iOS touch target minimum */
+    min-width: 44px;
+  }
+
+  .ticket-item:hover {
+    transform: none; /* Remove hover effects on touch devices */
+  }
+
+  .ticket-item:active,
+  .ticket-detail-header button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}

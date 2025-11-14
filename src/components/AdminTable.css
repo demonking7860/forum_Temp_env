@@ -1,0 +1,1115 @@
+/* Gen image button styling to match + and - buttons */
+.admin-table-container {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: auto;
+  position: relative;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transition: all 0.3s ease;
+}
+
+/* Staged entries header styling */
+.staged-entries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  /* Consistent spacing */
+  padding: 12px 16px;
+  /* Better padding */
+  background-color: rgba(227, 242, 253, 0.9) !important;
+  border: 1px solid #90caf9 !important;
+  color: #1565c0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.staged-entries-info {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.staged-entries-header button {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .admin-table-container {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-table-container {
+    padding: 12px 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+.admin-table {
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.75rem, 1.25vw, 1rem);
+  color: #000;
+  table-layout: fixed;
+  background: transparent;
+
+}
+
+.admin-table-university {
+  width: 100%;
+}
+
+.admin-table-school {
+  width: 100%;
+  min-width: 800px;
+  /* Ensure minimum width for all columns */
+}
+
+.scraper-view {}
+
+.admin-table th {
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  word-wrap: break-word;
+  font-size: clamp(0.7rem, 1vw, 0.875rem);
+  line-height: 1.3;
+  text-align: center;
+  min-width: 90px;
+  max-width: 600px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  transition: padding 0.3s ease, font-size 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .admin-table th {
+    padding: 8px;
+    font-size: clamp(0.65rem, 0.9vw, 0.75rem);
+  }
+}
+
+.button-small-action {
+  font-size: 0.65rem !important;
+  padding: 1px 4px !important;
+  height: 50px !important;
+  min-width: 60px !important;
+  line-height: 1 !important;
+  display: flex;
+  top: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  min-height: fit-content;
+  border-radius: 8px;
+  /* Add rounded corners to match the 'Add' button's shape */
+}
+
+.admin-table th.actions-column-header {
+  width: 150px;
+  min-width: 80px;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease;
+  overflow: visible;
+}
+
+.admin-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table td {
+  padding: 10px;
+  text-align: center;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 90px;
+  max-width: 200px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-size: clamp(0.75rem, 1.1vw, 0.9375rem);
+  line-height: 1.4;
+  transition: padding 0.3s ease, font-size 0.3s ease;
+  vertical-align: middle;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .admin-table td {
+    padding: 8px 6px;
+    font-size: clamp(0.7rem, 0.9vw, 0.8125rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-table td {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-word;
+    max-width: none;
+  }
+}
+
+.admin-table .university-column {
+  width: 380px !important;
+  min-width: 250px !important;
+  max-width: 350px !important;
+}
+
+.admin-table .gen-button-column {
+  width: 20px !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
+  padding: 5px !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-table td.actions-column-cell {
+  width: 100px;
+  min-width: 80px;
+  text-align: center;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+/* Ensure button containers align vertically center */
+.admin-table td.actions-column-cell .button-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  height: 28px;
+  min-height: 28px;
+  position: relative;
+  margin-top: -6px;
+}
+
+
+.admin-table td a {
+  color: var(--primary-color, #007bff);
+  text-decoration: none;
+}
+
+.admin-table td a:hover {
+  text-decoration: underline;
+}
+
+/* Special styling for new/temporary rows */
+.admin-table tr.add-new-row td,
+.admin-table tr.new-university-row td,
+.admin-table tr.temporary-row td,
+.admin-table tr.optimistic-row td {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+  border-bottom: 1px solid rgba(220, 53, 69, 0.2) !important;
+  color: #333;
+  min-width: 300px;
+  position: relative;
+}
+
+/* Optimistic row specific styling with saving indicator */
+.admin-table tr.optimistic-row td {
+  background-color: rgba(255, 193, 7, 0.15) !important;
+  border-bottom: 1px solid rgba(255, 193, 7, 0.3) !important;
+  border-left: 3px solid #ffc107 !important;
+}
+
+.admin-table tr.optimistic-row td::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(0deg,
+      #ffc107 0%,
+      #ffeb3b 50%,
+      #ffc107 100%);
+  animation: optimisticPulse 2s ease-in-out infinite;
+}
+
+/* Optimistic saving animation */
+@keyframes optimisticPulse {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scaleY(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
+/* Optimistic entry success state */
+.admin-table tr.optimistic-success td {
+  background-color: rgba(40, 167, 69, 0.1) !important;
+  border-left: 3px solid #28a745 !important;
+  animation: optimisticSuccess 1s ease-out;
+}
+
+@keyframes optimisticSuccess {
+  0% {
+    background-color: rgba(255, 193, 7, 0.15);
+    border-left-color: #ffc107;
+  }
+
+  100% {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left-color: #28a745;
+  }
+}
+
+/* Optimistic entry failure state */
+.admin-table tr.optimistic-failed td {
+  background-color: rgba(220, 53, 69, 0.15) !important;
+  border-left: 3px solid #dc3545 !important;
+  animation: optimisticFailure 0.5s ease-out;
+}
+
+@keyframes optimisticFailure {
+  0% {
+    background-color: rgba(255, 193, 7, 0.15);
+    border-left-color: #ffc107;
+  }
+
+  100% {
+    background-color: rgba(220, 53, 69, 0.15);
+    border-left-color: #dc3545;
+  }
+}
+
+.add-new-row .serial-number-cell {
+  max-width: 10px !important;
+}
+
+.admin-table-program-view.has-add-row .total-column {
+  display: none !important;
+}
+
+.admin-table tr.temporary-row:hover td,
+.admin-table tr.optimistic-row:hover td {
+  background-color: rgba(220, 53, 69, 0.2) !important;
+}
+
+.admin-table tr.staged-row td,
+.admin-table tr.add-new-row.staged-row td,
+.highlighted-staged-row td {
+  background-color: #e3f2fd !important;
+  /* Light blue for staged rows */
+  border-left: none !important;
+  transition: background 0.3s;
+}
+
+.staged-entries-header {
+  background-color: #e3f2fd !important;
+  border: 1px solid #90caf9 !important;
+  color: #1565c0;
+}
+
+.admin-table tr.add-new-row input::placeholder {
+  color: var(--text-color-placeholder, #6c757d);
+  font-style: italic;
+  font-size: 0.85em;
+}
+
+/* Input styling to match the table aesthetic */
+.inline-edit-input {
+  width: calc(100% - 10px);
+  padding: 0.35rem 0.5rem;
+  font-size: inherit;
+  border: 1px solid rgba(97, 218, 251, 0.5);
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inline-edit-input:focus {
+  outline: none;
+  border-color: rgba(97, 218, 251, 0.8);
+  box-shadow: 0 0 0 2px rgba(97, 218, 251, 0.2);
+}
+
+.admin-table-program-view {
+  width: 100%;
+}
+
+/* Button styling to match the table theme */
+.admin-table-action-button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.admin-table-action-button:last-child {
+  margin-right: 0;
+}
+
+.button-small {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.button-remove-row {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(212, 23, 54, 0.1);
+  border: 1px solid rgba(246, 59, 59, 0.2);
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.button-remove-row::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: #ba353c77;
+  border-radius: 1px;
+}
+
+.button-remove-row:hover {
+  border: 1px solid rgba(246, 59, 59, 0.2);
+  transform: scale(1.1);
+}
+
+.button-add-row {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+  font-size: 0;
+  /* Hide original text content */
+  color: transparent;
+  box-shadow: none;
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-add-row:hover:not(:disabled) {
+  transform: scale(1.18);
+}
+
+.button-add-row::before,
+.button-add-row::after {
+  content: '';
+  position: absolute;
+  background-color: #3B82F6;
+  /* Blue color for the '+' symbol */
+  border-radius: 1px;
+  top: 50%;
+  left: 50%;
+}
+
+.button-add-row::before {
+  width: 12px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.button-add-row::after {
+  width: 2px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+}
+
+.button-add-row:hover {
+  transform: scale(1.1);
+  box-shadow: none;
+}
+
+.gen-image-button {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  transition: transform 0.2s ease-in-out !important;
+  vertical-align: middle !important;
+}
+
+.gen-image-button img {
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.gen-image-button:hover {
+  transform: scale(1.2) !important;
+  box-shadow: none !important;
+}
+
+.multi-action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-primary {
+  background-color: #007bff;
+  border-color: #006fe6;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.add-new-row .serial-number-cell {
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+}
+
+.total .button-primary:hover {
+  background-color: #006fe6;
+  border-color: #0062cc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Serial number cell styling */
+
+.clickable-id {
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+.clickable-id:hover {
+  /* Remove individual cell hover background */
+  transform: scale(1.05);
+}
+
+/* Apply hover effect to entire row when hovering over clickable ID */
+.admin-table tbody tr:hover .clickable-id {
+  transform: scale(1.05);
+}
+
+.serial-number {
+  font-weight: 600;
+  color: #1a6985;
+}
+
+/* Copied row styling - applies blue tint to entire row */
+.copied-row {
+  background-color: rgba(97, 218, 251, 0.25) !important;
+  animation: copyRowSuccess 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.copied-row:hover {
+  background-color: rgba(97, 218, 251, 0.32) !important;
+}
+
+.optimistic-row {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+  animation: copyRowSuccess 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.optimistic-row:hover {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+@keyframes copyRowSuccess {
+  0% {
+    background-color: rgba(97, 218, 251, 0.45);
+    transform: scale(1.01);
+  }
+
+  60% {
+    background-color: rgba(97, 218, 251, 0.32);
+    transform: scale(1.005);
+  }
+
+  100% {
+    background-color: rgba(97, 218, 251, 0.25);
+    transform: scale(1);
+  }
+}
+
+.new-entry-indicator {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Country and University dropdown specific styling */
+.inline-edit-country-dropdown,
+.inline-edit-university-dropdown {
+  width: 100%;
+  position: relative;
+}
+
+.inline-edit-country-dropdown .react-select__control,
+.inline-edit-university-dropdown .react-select__control {
+  min-height: 2.2rem !important;
+  border: 1px solid rgba(97, 218, 251, 0.5) !important;
+  border-radius: 6px !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(4px);
+  font-size: inherit !important;
+}
+
+.inline-edit-country-dropdown .react-select__control--is-focused,
+.inline-edit-university-dropdown .react-select__control--is-focused {
+  border-color: rgba(97, 218, 251, 0.8) !important;
+  box-shadow: 0 0 0 2px rgba(97, 218, 251, 0.2) !important;
+}
+
+.inline-edit-country-dropdown .react-select__menu,
+.inline-edit-university-dropdown .react-select__menu {
+  z-index: 10002 !important;
+  border-radius: 6px !important;
+  font-size: inherit !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-top: 2px !important;
+}
+
+.inline-edit-country-dropdown .react-select__option,
+.inline-edit-university-dropdown .react-select__option {
+  font-size: inherit !important;
+}
+
+.inline-edit-country-dropdown .react-select__single-value,
+.inline-edit-country-dropdown .react-select__placeholder,
+.inline-edit-university-dropdown .react-select__single-value,
+.inline-edit-university-dropdown .react-select__placeholder {
+  font-size: inherit !important;
+}
+
+/* Ensure table cell allows dropdown to overflow */
+.admin-table td {
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Newly added row styling and animation */
+.newly-added-row {
+  background-color: rgba(97, 218, 251, 0.2) !important;
+  animation: newRowHighlight 3s ease-in-out;
+  border: 2px solid rgba(97, 218, 251, 0.5) !important;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.3) !important;
+}
+
+.newly-added-row:hover {
+  background-color: rgba(97, 218, 251, 0.3) !important;
+}
+
+@keyframes newRowHighlight {
+  0% {
+    background-color: rgba(97, 218, 251, 0.6);
+    border-color: rgba(97, 218, 251, 0.8);
+    box-shadow: 0 0 15px rgba(97, 218, 251, 0.5);
+    transform: scale(1.02);
+  }
+
+  25% {
+    background-color: rgba(97, 218, 251, 0.4);
+    transform: scale(1.01);
+  }
+
+  50% {
+    background-color: rgba(97, 218, 251, 0.3);
+    transform: scale(1.005);
+  }
+
+  75% {
+    background-color: rgba(97, 218, 251, 0.25);
+    transform: scale(1.002);
+  }
+
+  100% {
+    background-color: rgba(97, 218, 251, 0.2);
+    border-color: rgba(97, 218, 251, 0.5);
+    box-shadow: 0 0 10px rgba(97, 218, 251, 0.3);
+    transform: scale(1);
+  }
+}
+
+.admin-table tfoot tr td {
+  border-top: 2px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.gen-now-button {
+  border-radius: 6px !important;
+  padding: 0.3rem 0.6rem !important;
+  font-size: 0.75rem !important;
+  min-width: 45px;
+  width: 100%;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.gen-now-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.gen-now-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Add compact button styles */
+.button-compact {
+  font-size: 0.65rem !important;
+  padding: 2px 4px !important;
+  height: 22px !important;
+  min-width: 30px !important;
+  line-height: 1 !important;
+  margin: 0 1px !important;
+}
+
+.highlighted-staged-row {
+  background-color: #e3f2fd !important;
+  /* Light blue for staged rows */
+  border-left: 4px solid #2196f3 !important;
+  transition: background 0.3s;
+}
+
+/* Sorting Styles */
+.sortable-header {
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px !important;
+}
+
+.sortable-header:hover {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.sortable-header::after {
+  content: ' ';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  border: 5px solid transparent;
+  opacity: 0.4;
+}
+
+.sortable-header.sorted-asc::after,
+.sortable-header.sorted-desc::after {
+  opacity: 1;
+}
+
+.sortable-header.sorted-asc::after {
+  transform: translateY(-50%) translateY(-4px);
+  border-bottom-color: #333;
+}
+
+.sortable-header.sorted-desc::after {
+  transform: translateY(-50%) translateY(4px);
+  border-top-color: #333;
+}
+
+.temp-id-cell {
+  color: #d32f2f !important;
+  font-weight: 700 !important;
+}
+
+.temp-id-cell .new-entry-indicator {
+  color: #d32f2f !important;
+  border-color: #d32f2f !important;
+  background: rgba(211, 47, 47, 0.08) !important;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status-empty {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.status-exists {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.status-scraping {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ffcc02;
+}
+
+.admin-table-school {
+  width: 100%;
+  min-width: 800px;
+  /* Ensure minimum width for all columns */
+}
+
+.admin-table-school td {
+  min-width: 120px;
+  /* Ensure consistent minimum width for school table cells */
+}
+
+.admin-table-department {
+  width: 100%;
+}
+
+.admin-table-school .university-column {
+  width: 300px !important;
+  min-width: 250px !important;
+  max-width: 350px !important;
+}
+
+.admin-table-school td.actions-column-cell {
+  width: 150px;
+  min-width: 120px;
+  text-align: center;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+/* Ensure add new row spans full width */
+.admin-table-school tr.add-new-row {
+  width: 100%;
+}
+
+.admin-table-school tr.add-new-row td {
+  min-width: 120px;
+}
+
+/* When add form is visible, hide the Total column */
+.admin-table.add-form-visible .total-column {
+  display: none;
+}
+
+/* When add form is visible for 'all' view, hide extra columns */
+.admin-table.add-form-visible .hide-on-form-visible {
+  display: none;
+}
+
+/* Import Results Highlighting Styles */
+.import-highlight-created {
+  background-color: #d4edda !important;
+  border-left: 4px solid #28a745 !important;
+  animation: fadeInHighlight 0.8s ease-out;
+}
+
+.import-highlight-updated {
+  background-color: #d1ecf1 !important;
+  border-left: 4px solid #17a2b8 !important;
+  animation: fadeInHighlight 0.8s ease-out;
+}
+
+.import-highlight-conflict {
+  background-color: #fff3cd !important;
+  border-left: 4px solid #ffc107 !important;
+  animation: pulseConflict 1.5s ease-in-out infinite;
+}
+
+/* Fade in animation for highlights */
+@keyframes fadeInHighlight {
+  0% {
+    opacity: 0.3;
+    transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulse animation for conflicts */
+@keyframes pulseConflict {
+
+  0%,
+  100% {
+    background-color: #fff3cd;
+  }
+
+  50% {
+    background-color: #ffeaa7;
+  }
+}
+
+/* Enhanced hover states for highlighted rows */
+.import-highlight-created:hover {
+  background-color: #c3e6cb !important;
+}
+
+.import-highlight-updated:hover {
+  background-color: #bee5eb !important;
+}
+
+.import-highlight-conflict:hover {
+  background-color: #ffeeba !important;
+}
+
+/* Faculty table specific styles */
+.admin-table-faculty {
+  width: 100%;
+  min-width: 1000px;
+  background: transparent !important;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.75rem, 1.25vw, 1rem);
+  color: #000;
+  table-layout: fixed;
+}
+
+.admin-table-faculty td {
+  padding: 12px 8px;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent !important;
+  transition: background 0.3s ease;
+}
+
+.admin-table-faculty tbody tr {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease;
+}
+
+.admin-table-faculty tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.admin-table-faculty tbody tr:hover td {
+  background-color: transparent !important;
+}
+
+.admin-table-faculty th {
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border-bottom: 2px solid #ddd;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Faculty specific column widths */
+.admin-table-faculty .id-column {
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
+  text-align: center;
+}
+
+.admin-table-faculty .name-column {
+  width: 180px;
+  min-width: 150px;
+  max-width: 200px;
+  font-weight: 500;
+}
+
+.admin-table-faculty .title-column {
+  width: 120px;
+  min-width: 100px;
+  max-width: 150px;
+  font-size: 0.9rem;
+  color: var(--text-color-secondary, #666);
+}
+
+.admin-table-faculty .education-column {
+  width: 400px;
+  min-width: 350px;
+  max-width: 500px;
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: normal;
+  font-size: 0.85rem;
+}
+
+.admin-table-faculty .email-column {
+  width: 160px;
+  min-width: 140px;
+  max-width: 180px;
+  font-size: 0.85rem;
+}
+
+.admin-table-faculty .profile-url-column {
+  width: 100px;
+  min-width: 90px;
+  max-width: 120px;
+  text-align: center;
+}
+
+.admin-table-faculty .actions-column-cell {
+  width: 80px;
+  min-width: 70px;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Faculty education bullet point styling */
+.faculty-education {
+  line-height: 1.4;
+  color: var(--text-color-primary, #333);
+}
+
+.faculty-education:contains("•") {
+  white-space: normal;
+}
+
+/* Faculty profile link styling */
+.faculty-link {
+  color: var(--primary-color, #007bff);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.faculty-link:hover {
+  text-decoration: none;
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #0056b3;
+}
+
+/* Faculty row hover effects */
+.admin-table-faculty tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: none;
+  /* Prevent any transform on hover */
+}
+
+.admin-table-faculty tbody tr:hover td {
+  background-color: transparent;
+}
+
+/* Responsive faculty table */
+@media (max-width: 1200px) {
+  .admin-table-faculty {
+    min-width: 900px;
+  }
+
+  .admin-table-faculty .education-column {
+    width: 300px;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .admin-table-faculty {
+    min-width: 800px;
+  }
+
+  .admin-table-faculty .education-column {
+    width: 250px;
+    min-width: 200px;
+  }
+
+  .admin-table-faculty .name-column {
+    width: 150px;
+    min-width: 120px;
+  }
+}
+
+/* Faculty table container styling - override dark background */
+.admin-table-faculty-container {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: auto;
+  position: relative;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transition: all 0.3s ease;
+}
+
+.admin-table-faculty-container:hover {
+  box-shadow: 0 8px 32px 0 rgba(26, 105, 133, 0.13), 0 2px 8px 0 rgba(26, 105, 133, 0.07);
+  background: rgba(255, 255, 255, 0.98) !important;
+}

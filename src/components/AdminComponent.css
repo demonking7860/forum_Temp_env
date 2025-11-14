@@ -1,0 +1,1279 @@
+.back-to-app-button {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-small, 0.9rem);
+}
+
+.admin-tab-content {
+  padding-top: 1rem;
+  overflow-x: auto;
+}
+
+.admin-tab-content h3 {
+  font-size: 1.5rem;
+  color: var(--text-color-primary, #333);
+  margin-bottom: 1rem;
+}
+
+.admin-tab-content p {
+  font-size: var(--font-size-base, 1rem);
+  line-height: 1.6;
+  color: var(--text-color-secondary, #555);
+}
+
+/* General styles for action buttons within admin tabs */
+.admin-action-button {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-small, 0.9rem);
+  display: inline-flex;
+  /* To align icon and text */
+  align-items: center;
+  gap: 0.4rem;
+  /* Space between icon and text */
+}
+
+.admin-action-button .icon {
+  /* If using an actual icon element/font */
+  font-size: 1.1em;
+}
+
+.main-content {
+  padding: 1rem;
+}
+
+/* General Admin Panel Styles (if any) */
+.admin-panel-card {
+  padding: 3rem;
+  /* Increased from 1.5rem to 3rem for more padding */
+  background-color: var(--bg-color-light, #fff);
+  border-radius: var(--border-radius-large, 12px);
+  box-shadow: var(--box-shadow-medium, 0 4px 12px rgba(0, 0, 0, 0.08));
+  margin-top: 2rem;
+  border: 1px solid var(--border-color-light);
+
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color-light, #e9ecef);
+}
+
+.admin-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--text-color-primary, #333);
+}
+
+/* New or updated styles for the row containing search and add button */
+.admin-controls-wrapper {
+  max-width: 10000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  /* Add vertical padding */
+}
+
+.admin-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0;
+  /* Remove margin-top */
+  margin-bottom: var(--section-gap);
+  min-height: 60px;
+  /* Ensure consistent height */
+}
+
+.admin-action-buttons-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  height: fit-content;
+  /* Prevent stretching */
+}
+
+/* Remove the old program-view-dropdown styles and replace with react-select styling */
+.program-view-dropdown-select {
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.program-view-dropdown-select .react-select__control {
+  border: 2px solid var(--primary-color, #007bff) !important;
+  border-radius: var(--border-radius-medium, 8px) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
+  color: var(--primary-color-dark, #0a3d4e) !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 600 !important;
+  font-size: var(--font-size-small, 0.9rem) !important;
+  box-shadow: 0 4px 12px rgba(26, 105, 133, 0.15),
+    0 2px 4px rgba(26, 105, 133, 0.1) !important;
+  min-height: 40px !important;
+}
+
+.program-view-dropdown-select .react-select__control:hover {
+  border-color: var(--primary-color-medium, #1a6985) !important;
+  background: rgba(233, 246, 252, 0.95) !important;
+  box-shadow: 0 6px 20px rgba(26, 105, 133, 0.2),
+    0 4px 8px rgba(26, 105, 133, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+.program-view-dropdown-select .react-select__control--is-focused {
+  border-color: var(--primary-color-medium, #1a6985) !important;
+  background: rgba(233, 246, 252, 0.95) !important;
+  box-shadow: 0 0 0 4px rgba(26, 105, 133, 0.25),
+    0 6px 20px rgba(26, 105, 133, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+.program-view-dropdown-select .react-select__menu {
+  z-index: 10000 !important;
+  border-radius: var(--border-radius-medium, 8px) !important;
+  border: 2px solid var(--primary-color, #007bff) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 32px rgba(26, 105, 133, 0.2),
+    0 4px 16px rgba(26, 105, 133, 0.15) !important;
+  overflow: hidden !important;
+  margin-top: 4px !important;
+}
+
+.program-view-dropdown-select .react-select__menu-list {
+  padding: 8px !important;
+}
+
+.program-view-dropdown-select .react-select__option {
+  cursor: pointer !important;
+  font-size: var(--font-size-small, 0.9rem) !important;
+  font-weight: 500 !important;
+  padding: 12px 16px !important;
+  border-radius: 6px !important;
+  margin: 2px 0 !important;
+  transition: all 0.2s ease !important;
+  color: var(--primary-color-dark, #0a3d4e) !important;
+  background: transparent !important;
+}
+
+.program-view-dropdown-select .react-select__option--is-selected {
+  background: linear-gradient(135deg, var(--primary-color, #007bff), var(--primary-color-medium, #1a6985)) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(26, 105, 133, 0.3) !important;
+}
+
+.program-view-dropdown-select .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background: rgba(233, 246, 252, 0.8) !important;
+  color: var(--primary-color-dark, #0a3d4e) !important;
+  transform: translateX(4px) !important;
+}
+
+.program-view-dropdown-select .react-select__single-value {
+  color: var(--primary-color-dark, #0a3d4e) !important;
+  font-size: var(--font-size-small, 0.9rem) !important;
+  font-weight: 600 !important;
+}
+
+.program-view-dropdown-select .react-select__placeholder {
+  color: var(--text-color-secondary, #5a6773) !important;
+  font-weight: 500 !important;
+}
+
+.program-view-dropdown-select .react-select__indicator-separator {
+  background-color: var(--primary-color, #007bff) !important;
+  width: 2px !important;
+  margin: 8px 4px !important;
+}
+
+.program-view-dropdown-select .react-select__dropdown-indicator {
+  color: var(--primary-color, #007bff) !important;
+  padding: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.program-view-dropdown-select .react-select__dropdown-indicator:hover {
+  color: var(--primary-color-medium, #1a6985) !important;
+  transform: scale(1.1) !important;
+}
+
+.program-view-dropdown-select .react-select__control--is-focused .react-select__dropdown-indicator {
+  transform: rotate(180deg) !important;
+}
+
+/* Add subtle animation for dropdown appearance */
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.program-view-dropdown-select .react-select__menu {
+  animation: dropdownSlideIn 0.2s ease-out !important;
+}
+
+/* Match the admin floating tabs hover effect */
+.program-view-dropdown-select .react-select__option:not(.react-select__option--is-selected):hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(233, 246, 252, 0.4), transparent);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Toast Notification Styles */
+.toast {
+  position: fixed;
+  top: 20px;
+  /* Distance from the top */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%) translateY(-100%);
+  /* Initial position off-screen above */
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--border-radius-medium, 8px);
+  color: var(--bg-color-light, #fff);
+  /* Default text color, assuming backgrounds provide contrast */
+  font-size: var(--font-size-small, 0.9rem);
+  font-weight: 500;
+  z-index: 10000;
+  box-shadow: var(--box-shadow-medium, 0 4px 12px rgba(0, 0, 0, 0.15));
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  min-width: 280px;
+  /* Slightly wider */
+  max-width: 90%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  /* Slide in from top */
+}
+
+.toast-success {
+  background-color: var(--success-color-dark, #287f9e);
+  /* Use variable from styles.css */
+  color: #fff;
+}
+
+.toast-error {
+  background-color: var(--error-color-dark, #c82333);
+  /* Use variable from styles.css */
+  color: #fff;
+}
+
+.toast-info {
+  background-color: var(--info-color-dark, #138496);
+  /* Use variable from styles.css */
+  color: #fff;
+}
+
+/* Ensure you have these CSS variables defined in your main styles.css or :root */
+/*
+:root {
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --info-color: #17a2b8;
+  --font-size-small: 0.9rem;
+  --border-radius-medium: 8px;
+  --box-shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+  --bg-color-light: #fff;
+}
+*/
+
+.university-management-card,
+.program-management-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: var(--section-gap, 2rem);
+  box-shadow: 0 4px 24px 0 rgba(26, 105, 133, 0.08), 0 1.5px 6px 0 rgba(26, 105, 133, 0.04);
+  border: 1px solid var(--border-color-light, #dee5ec);
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.university-management-card:hover,
+.program-management-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(26, 105, 133, 0.13), 0 2px 8px 0 rgba(26, 105, 133, 0.07);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.university-management-card h3,
+.program-management-card h3 {
+  font-size: clamp(1.2rem, 2.8vw, 1.4rem);
+  margin-bottom: 1.5rem;
+  color: var(--primary-color-dark, #0a3d4e);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.university-management-card .admin-controls-wrapper,
+.program-management-card .admin-controls-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.university-management-card .admin-controls-row,
+.program-management-card .admin-controls-row {
+  margin-bottom: 0;
+}
+
+.university-table-container,
+.program-table-container {
+  margin-top: 1.5rem;
+}
+
+.loading-indicator.card,
+.error-message.card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(26, 105, 133, 0.06);
+  padding: 1.25rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  text-align: center;
+}
+
+/* Admin component wrapper for positioning */
+.admin-component-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+  /* Remove extra padding */
+  margin-top: 15px;
+}
+
+/* Admin floating tabs styling to match search/comparison tabs */
+.admin-floating-tabs {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+.admin-floating-tab-button {
+  padding: 12px 30px;
+  margin: 0 8px;
+  min-width: 120px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: var(--text-color-secondary, #5a6773);
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  text-align: center;
+}
+
+.admin-floating-tab-button.active {
+  color: var(--primary-color-medium, #1a6985);
+  border-bottom: 3px solid var(--primary-color-medium, #1a6985);
+  font-weight: 600;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.admin-floating-tab-button.active:hover {
+  /* Ensure active tab doesn't change on hover */
+  background-color: transparent;
+  color: var(--primary-color-medium, #1a6985);
+}
+
+/* Enhanced hover effect with background highlight - only for non-active tabs */
+.admin-floating-tab-button:hover:not(.active) {
+  background-color: rgba(233, 246, 252, 0.5);
+  /* Light blue background on hover */
+  color: var(--primary-color-dark, #0a3d4e);
+}
+
+/* Add a subtle transition effect for the background */
+.admin-floating-tab-button:not(.active)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(233, 246, 252, 0.8);
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.admin-floating-tab-button:not(.active):hover::after {
+  height: 100%;
+}
+
+/* Admin panel card styling */
+.admin-panel-card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  margin-top: 15px;
+  /* Add space below tabs */
+  position: relative;
+}
+
+.admin-tab-content {
+  overflow: auto;
+}
+
+/* Filter toggle styling to match website theme */
+.filter-toggle-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--primary-color, #007bff);
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.filter-toggle-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.filter-toggle-button {
+  padding: 0.6rem 1rem;
+  font-size: var(--font-size-small, 0.9rem);
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--primary-color, #007bff);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 70px;
+  position: relative;
+}
+
+.filter-toggle-button:first-child {
+  border-right: 1px solid var(--primary-color, #007bff);
+}
+
+.filter-toggle-button:hover:not(.active) {
+  background: rgba(233, 246, 252, 0.5);
+  color: var(--primary-color-dark, #0a3d4e);
+}
+
+.filter-toggle-button.active {
+  background: linear-gradient(135deg, var(--primary-color, #007bff), var(--primary-color-medium, #1a6985));
+  color: #fff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-toggle-button.active:hover {
+  background: linear-gradient(135deg, var(--primary-color-medium, #1a6985), var(--primary-color-dark, #0a3d4e));
+}
+
+/* Add animation for toggle state changes */
+.filter-toggle-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(90deg, transparent, rgba(233, 246, 252, 0.3), transparent);
+  transition: height 0.2s ease;
+}
+
+.filter-toggle-button:hover:not(.active)::after {
+  height: 100%;
+}
+
+/* Responsive adjustments for filter toggle */
+@media (max-width: 768px) {
+  .filter-toggle-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-toggle-container {
+    flex-shrink: 0;
+  }
+
+  .filter-toggle-button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    min-width: 50px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-floating-tab-button {
+    padding: 10px 20px;
+    margin: 0 4px;
+    min-width: 100px;
+    font-size: 0.9rem;
+  }
+
+  .admin-panel-card {
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-floating-tab-button {
+    padding: 8px 12px;
+    margin: 0 2px;
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Configuration Tab Styles */
+.config-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.config-groups {
+  margin: 2rem 0;
+}
+
+.config-group {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color-light, #dee5ec);
+  backdrop-filter: blur(8px);
+}
+
+.config-group h4 {
+  margin: 0 0 1rem 0;
+  color: var(--primary-color-dark, #0a3d4e);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.config-item {
+  margin-bottom: 1rem;
+}
+
+.config-label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.config-label:hover {
+  border-color: var(--primary-color, #007bff);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.config-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.config-title {
+  font-weight: 600;
+  color: var(--text-color-primary, #333);
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.config-description {
+  font-size: 0.85rem;
+  color: var(--text-color-secondary, #6c757d);
+  line-height: 1.4;
+}
+
+.config-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color-light, #dee5ec);
+}
+
+.config-actions .button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.config-actions .button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.config-current {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+.config-current h5 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color-primary, #333);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.config-display {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+  overflow-x: auto;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+/* Responsive design for config tab */
+@media (max-width: 768px) {
+  .config-section {
+    padding: 0 1rem;
+  }
+
+  .config-group {
+    padding: 1rem;
+  }
+
+  .config-actions {
+    flex-direction: column;
+  }
+
+  .config-actions .button {
+    width: 100%;
+  }
+}
+
+/* ===========================================
+   USER MANAGEMENT TABLE STYLING
+   =========================================== */
+
+/* Table container for centering and responsive design */
+.blocked-user-table-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(26, 105, 133, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color-light, #dee5ec);
+}
+
+/* Main admin table styling */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Table header styling - Use link-hover-color */
+.admin-table thead {
+  background: var(--link-hover-color);
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.admin-table thead th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Table body styling */
+.admin-table tbody tr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(26, 105, 133, 0.08);
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(233, 246, 252, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(26, 105, 133, 0.1);
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.admin-table tbody tr:nth-child(even):hover {
+  background: rgba(233, 246, 252, 0.6);
+}
+
+/* Table cell styling */
+.admin-table td {
+  padding: 1rem 0.75rem;
+  vertical-align: middle;
+  color: var(--text-color-primary, #333);
+  border-bottom: 1px solid rgba(26, 105, 133, 0.06);
+}
+
+/* First column (Email) - make it more prominent */
+.admin-table td:first-child {
+  font-weight: 600;
+  color: var(--primary-color-dark, #0a3d4e);
+  max-width: 250px;
+  word-break: break-word;
+}
+
+/* Reason column styling */
+.admin-table td:nth-child(2) {
+  max-width: 300px;
+  word-break: break-word;
+  color: var(--text-color-secondary, #5a6773);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+/* Date columns styling */
+.admin-table td:nth-child(3),
+.admin-table td:nth-child(4) {
+  font-size: 0.8rem;
+  color: var(--text-color-secondary, #6c757d);
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+/* Actions column styling */
+.admin-table td:last-child {
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Button styling in table */
+.admin-table .button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  min-width: 70px;
+}
+
+.admin-table .button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Empty state styling */
+.admin-table .empty_state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-color-secondary, #6c757d);
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+
+/* ===========================================
+   MOBILE RESPONSIVE DESIGN
+   =========================================== */
+
+/* Hide less critical columns on very small screens */
+@media (max-width: 600px) {
+  .admin-table thead th:nth-child(4),
+  .admin-table td:nth-child(4) {
+    display: none;
+  }
+
+  .admin-table thead th:first-child {
+    width: 35%;
+  }
+
+  .admin-table thead th:nth-child(2) {
+    width: 35%;
+  }
+
+  .admin-table thead th:nth-child(3) {
+    width: 20%;
+  }
+
+  .admin-table thead th:last-child {
+    width: 10%;
+  }
+}
+
+/* Mobile table responsiveness */
+@media (max-width: 768px) {
+  .blocked-user-table-container {
+    margin: 0 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(26, 105, 133, 0.08);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-table {
+    font-size: 0.75rem;
+    min-width: 700px; /* Wider table for better content display */
+    table-layout: fixed; /* Fixed layout prevents column compression */
+  }
+
+  .admin-table thead th {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    word-break: break-word;
+  }
+
+  .admin-table thead th:first-child {
+    width: 30%; /* Email column */
+    text-align: left;
+  }
+
+  .admin-table thead th:nth-child(2) {
+    width: 25%; /* Reason column */
+    text-align: left;
+  }
+
+  .admin-table thead th:nth-child(3) {
+    width: 20%; /* Date column */
+    text-align: center;
+  }
+
+  .admin-table thead th:nth-child(4) {
+    width: 15%; /* Blocked By column */
+    text-align: center;
+  }
+
+  .admin-table thead th:last-child {
+    width: 10%; /* Actions column */
+    text-align: center;
+  }
+
+  .admin-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.7rem;
+    vertical-align: middle;
+  }
+
+  .admin-table td:first-child {
+    font-weight: 600;
+    font-size: 0.65rem;
+    word-break: break-word;
+    line-height: 1.2;
+  }
+
+  .admin-table td:nth-child(2) {
+    font-size: 0.65rem;
+    word-break: break-word;
+    line-height: 1.2;
+    color: var(--text-color-secondary, #6c757d);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .admin-table td:nth-child(3),
+  .admin-table td:nth-child(4) {
+    font-size: 0.6rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .admin-table td:last-child {
+    text-align: center;
+  }
+
+  .admin-table .button {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.6rem;
+    min-width: 50px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .blocked-user-table-container {
+    margin: 0 0.25rem;
+  }
+
+  .admin-table {
+    min-width: 650px;
+    font-size: 0.7rem;
+  }
+
+  .admin-table thead th {
+    padding: 0.4rem 0.2rem;
+    font-size: 0.6rem;
+  }
+
+  .admin-table td {
+    padding: 0.4rem 0.2rem;
+    font-size: 0.65rem;
+  }
+
+  .admin-table td:first-child {
+    font-size: 0.6rem;
+  }
+
+  .admin-table td:nth-child(2) {
+    font-size: 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .admin-table .button {
+    padding: 0.2rem 0.35rem;
+    font-size: 0.55rem;
+    min-width: 45px;
+  }
+}
+
+/* ===========================================
+   DESKTOP ENHANCEMENTS
+   =========================================== */
+
+@media (min-width: 1200px) {
+  .blocked-user-table-container {
+    max-width: 1400px;
+  }
+
+  .admin-table {
+    font-size: 0.95rem;
+  }
+
+  .admin-table thead th {
+    padding: 1.25rem 1rem;
+  }
+
+  .admin-table td {
+    padding: 1.25rem 1rem;
+  }
+
+  .admin-table .button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-width: 80px;
+  }
+}
+
+/* ===========================================
+   ACCESSIBILITY IMPROVEMENTS
+   =========================================== */
+
+/* Focus states for keyboard navigation */
+.admin-table tbody tr:focus-within {
+  outline: 2px solid var(--primary-color, #007bff);
+  outline-offset: -2px;
+}
+
+.admin-table .button:focus {
+  outline: 2px solid var(--primary-color, #007bff);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .admin-table {
+    border: 2px solid var(--text-color-primary, #333);
+  }
+
+  .admin-table thead {
+    background: var(--link-hover-color);
+    color: white;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .admin-table tbody tr {
+    border-bottom: 2px solid var(--text-color-primary, #333);
+  }
+}
+
+/* ===========================================
+   ANIMATION EFFECTS
+   =========================================== */
+
+@keyframes tableRowFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-table tbody tr {
+  animation: tableRowFadeIn 0.3s ease-out;
+}
+
+.admin-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.admin-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.admin-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.admin-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.admin-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+
+/* ===========================================
+   USER MANAGEMENT CONTAINER
+   =========================================== */
+
+.user-management-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* User card styling for selected user */
+.user-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(26, 105, 133, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color-light, #dee5ec);
+}
+
+.user-card p {
+  margin: 0.5rem 0;
+  color: var(--text-color-primary, #333);
+}
+
+.user-card strong {
+  color: var(--primary-color-dark, #0a3d4e);
+}
+
+/* Responsive adjustments for user management */
+@media (max-width: 768px) {
+  .user-management-container {
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+
+  .user-card {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .user-card p {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+  }
+
+  /* Improve search input on mobile */
+  .admin-search-input {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-management-container {
+    padding: 0 0.25rem;
+  }
+
+  .user-card {
+    padding: 0.6rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .user-card p {
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+  }
+
+  .admin-search-input {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+}
+
+/* Rate Limiting Configuration Styles */
+.rate-limit-configs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rate-limit-item {
+  background: var(--bg-color-light, #fff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: var(--border-radius-medium, 8px);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow-light, 0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+.rate-limit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color-light, #f0f0f0);
+}
+
+.rate-limit-header h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color-primary, #333);
+  text-transform: capitalize;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-small, 4px);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.enabled {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-badge.disabled {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.rate-limit-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.config-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.config-field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color-secondary, #555);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.config-field label input[type="checkbox"] {
+  margin: 0;
+}
+
+.config-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: var(--border-radius-small, 4px);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+}
+
+.config-input:focus {
+  outline: none;
+  border-color: var(--primary-color, #007bff);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.rate-limit-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color-light, #f0f0f0);
+}
+
+.button-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.config-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-color-secondary, #555);
+  font-style: italic;
+}
+
+.config-empty {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-color-light, #fff);
+  border: 2px dashed var(--border-color, #e0e0e0);
+  border-radius: var(--border-radius-medium, 8px);
+}
+
+.config-empty p {
+  margin-bottom: 1rem;
+  color: var(--text-color-secondary, #555);
+}
+
+/* Responsive adjustments for rate limiting */
+@media (max-width: 768px) {
+  .rate-limit-fields {
+    grid-template-columns: 1fr;
+  }
+  
+  .rate-limit-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .rate-limit-actions {
+    flex-direction: column;
+  }
+}

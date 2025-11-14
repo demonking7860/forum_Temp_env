@@ -1,0 +1,360 @@
+/* Comparison Table Styles */
+.comparison-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 15px 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comparison-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: #1a6985;
+  width: 100%;
+}
+
+.comparison-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  padding-bottom: 10px;
+}
+
+.year-section {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.year-header {
+  padding: 12px 0;
+  margin-bottom: 15px;
+  text-align: center;
+  position: sticky;
+  left: 0;
+  background: rgba(240, 247, 255, 0.8);
+  z-index: 10;
+}
+
+.year-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.table-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.comparison-table th {
+  min-width: 180px;
+  padding: 15px 10px;
+  background: rgba(240, 247, 255, 0.8);
+  border-bottom: 2px solid rgba(26, 105, 133, 0.2);
+  text-align: center;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.comparison-table td {
+  min-width: 180px;
+  vertical-align: top;
+  padding: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: white;
+}
+
+.university-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.university-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a6985;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.university-program-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.university-program, .university-field {
+  white-space: normal;
+  display: inline-block;
+}
+
+.separator {
+  color: #aaa;
+  font-size: 0.7rem;
+  margin: 0 2px;
+}
+
+/* University data cell styling */
+.university-data {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.placement-summary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: rgba(240, 247, 255, 0.5);
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.placement-count {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a6985;
+  line-height: 1;
+}
+
+.placement-label {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.institution-block {
+  margin: 0 5px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.institution-header {
+  padding: 10px;
+  background: rgba(240, 247, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s ease;
+}
+
+.institution-header:hover {
+  background: rgba(230, 240, 255, 0.8);
+}
+
+.institution-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+.toggle-button {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: none;
+  background: rgba(26, 105, 133, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.toggle-button:hover {
+  background: rgba(26, 105, 133, 0.2);
+}
+
+.toggle-button::before,
+.toggle-button::after {
+  content: '';
+  position: absolute;
+  background: #1a6985;
+  border-radius: 2px;
+}
+
+.toggle-button::before {
+  width: 12px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-button.toggle-plus::after {
+  width: 2px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Dynamic column hiding for admin tables */
+
+.roles-list {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.role-item {
+  padding: 5px 0;
+  font-size: 0.8rem;
+  color: #555;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  line-height: 1.4;
+}
+
+.role-item:last-child {
+  border-bottom: none;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .comparison-container {
+    padding: 10px 0;
+  }
+  
+  .comparison-table {
+    table-layout: fixed;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    min-width: 150px;
+    padding: 8px 5px;
+  }
+  
+  .university-name {
+    font-size: 0.85rem;
+  }
+  
+  .university-program-field {
+    font-size: 0.7rem;
+  }
+  
+  .placement-count {
+    font-size: 1.3rem;
+  }
+  
+  .institution-name {
+    font-size: 0.8rem;
+    max-width: 120px;
+  }
+  
+  .role-item {
+    font-size: 0.75rem;
+    padding: 4px 0;
+  }
+  
+  .placement-summary-container {
+    padding: 8px 5px;
+  }
+  
+  /* Add touch affordance */
+  .institution-header {
+    padding: 12px 8px;
+  }
+  
+  .institution-header:active {
+    background: rgba(179, 229, 252, 0.4);
+  }
+  
+  .toggle-button {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+  
+  /* Add swipe hint styling */
+  .comparison-scroll {
+    position: relative;
+  }
+  
+  .comparison-scroll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7));
+    pointer-events: none;
+  }
+
+  /* Fix weird scroll jumps */
+  .comparison-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+  }
+}
+
+/* Small mobile optimization */
+@media (max-width: 480px) {
+  .comparison-table th,
+  .comparison-table td {
+    min-width: 140px;
+    padding: 6px 4px;
+  }
+  
+  .university-name {
+    font-size: 0.8rem;
+  }
+  
+  .institution-name {
+    font-size: 0.75rem;
+    max-width: 100px;
+  }
+  
+  .role-item {
+    font-size: 0.7rem;
+  }
+}
+
+/* Add sticky first column on mobile to help with orientation */
+@media (max-width: 768px) {
+  .comparison-table th:first-child,
+  .comparison-table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  }
+}

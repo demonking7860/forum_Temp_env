@@ -1,0 +1,841 @@
+/* Modal Base Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #e6f2ff 0%, #b3d7ff 100%);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content-large {
+  max-height: 85vh;
+  max-width: 850px;
+  width: 90%;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #e6f2ff 0%, #b3d7ff 100%);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  position: relative;
+  text-align: center;
+}
+
+.modal-content-comparison {
+  max-height: 85vh;
+  max-width: 750px;
+  width: 90%;
+  background: linear-gradient(to bottom, #f0f7ff, #e5f2ff);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: linear-gradient(to right, #1a6985, #2980b9);
+  color: white;
+  position: relative;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.close-button {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.close-button::before,
+.close-button::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: white;
+  top: 50%;
+  left: 50%;
+}
+
+.close-button::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Program Field Banner */
+.program-field-banner {
+  background: rgba(25, 118, 210, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.program-field-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.program-field-label {
+  font-weight: 600;
+  color: #1a6985;
+  font-size: 0.9rem;
+}
+
+.program-field-value {
+  background: rgba(25, 118, 210, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #1a6985;
+  font-size: 0.875rem;
+}
+
+/* Add animation for row appearance */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add new animation for smoother row appearance */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empty state message */
+.empty-selections-message {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px 0 20px;
+  text-align: center;
+  border: 1px dashed rgba(26, 105, 133, 0.3);
+  color: #1a6985;
+}
+
+.empty-selections-message p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Selection Row */
+.university-selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 10; /* Lower base z-index to allow for higher values in children */
+  margin-bottom: 8px;
+}
+
+.selection-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, z-index 0.1s ease;
+  animation: slideIn 0.2s ease-out;
+  transform: translate3d(0,0,0); /* Force hardware acceleration */
+  isolation: isolate; /* Create stacking context */
+  will-change: transform, opacity; /* Hint for browser optimization */
+}
+
+/* Higher z-index for active/hovered rows to ensure their dropdowns appear on top */
+.selection-row:hover,
+.selection-row.active-row {
+  background-color: #f5f8ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1500 !important; /* Ensure active rows are always on top */
+}
+
+/* Improved search results styling */
+.search-results {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+  background: white;
+  z-index: 10001 !important; /* Always one higher than the focused field */
+  position: absolute;
+  overflow: hidden; /* Hide scrollbar unless needed */
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  will-change: transform, opacity;
+}
+
+/* Style for dropdown results items */
+.search-result-item {
+  padding: 12px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  user-select: none; /* Prevent text selection */
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: rgba(97, 218, 251, 0.1);
+  transform: translateX(2px); /* Subtle movement on hover */
+}
+
+.search-result-item:active {
+  transform: translateX(0); /* Reset on active state */
+  background-color: rgba(97, 218, 251, 0.2);
+}
+
+.search-result-item.active {
+  background-color: rgba(97, 218, 251, 0.15);
+  font-weight: 600;
+  border-left: 3px solid #1a6985; /* Visual indicator for selected item */
+  padding-left: 11px; /* Adjust for border */
+}
+
+/* Style for upward dropdowns */
+.search-results.position-above {
+  bottom: 100%;
+  top: auto;
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Match highlighting in search results */
+.match-highlight {
+  background-color: rgba(97, 218, 251, 0.3);
+  font-weight: 600;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Make dropdown animations smooth */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add styles for selected university display */
+.selected-university {
+  position: absolute;
+  max-width: calc(100% - 70px); /* Ensure text doesn't overlap with remove button */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none; /* Hidden by default, only shown in CSS for selected rows */
+  color: #1a6985;
+  font-weight: 600;
+  font-size: 0.875rem;
+  top: 0;
+  left: 0;
+  padding: 10px 14px;
+  pointer-events: none;
+}
+
+.uni-counter {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a6985;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+
+.uni-selection {
+  flex: 1;
+  position: relative; /* Added for absolute positioning of selected university */
+}
+
+/* Remove Button - Hidden by default */
+.remove-selection-button {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 76, 76, 0.1);
+  border: 1px solid rgba(255, 76, 76, 0.3);
+  color: #d32f2f;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 0.8;
+  margin-top: 20px;
+  z-index: 10; /* Ensure button stays above other elements */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Show the button when row is active or on hover for non-touch devices */
+@media (hover: hover) {
+  .selection-row:hover .remove-selection-button {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* Always show the button when row is active (clicked) */
+.selection-row.active-row .remove-selection-button,
+.remove-selection-button.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.remove-selection-button:hover {
+  background: rgba(255, 76, 76, 0.2);
+  transform: scale(1.1);
+}
+
+.remove-selection-button:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Buttons - updated to match main page styling */
+.add-university-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(240, 240, 240, 0.5);
+  color: #1a6985;
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  border-radius: 3.125rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  min-width: 8.75rem;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.add-university-button:hover {
+  transform: translateY(-2px);
+  background-color: rgba(240, 240, 240, 0.8);
+}
+
+.add-university-button .plus-icon {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Add ripple effect for more tactile feedback */
+.add-university-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.add-university-button:focus:not(:active)::after {
+  animation: ripple 0.7s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0) translate(-50%, -50%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Footer */
+.modal-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.cancel-button {
+  padding: 0.75rem 1.5rem;
+  background: rgba(242, 242, 242, 0.3);
+  color: #555;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  border-radius: 3.125rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 8.75rem;
+  letter-spacing: 0.5px;
+}
+
+.cancel-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-button, .compare-button {
+  padding: 0.75rem 1.5rem;
+  background: rgba(97, 218, 251, 0.25);
+  color: #1a6985;
+  border: 1px solid rgba(97, 218, 251, 0.3);
+  border-radius: 3.125rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 8.75rem;
+  letter-spacing: 0.5px;
+}
+
+.search-button:hover, .compare-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:disabled, .compare-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Error Message */
+.validation-error {
+  background: rgba(255, 76, 76, 0.1);
+  border: 1px solid rgba(255, 76, 76, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #d32f2f;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-bottom: 8px;
+  animation: errorPulse 1.5s ease-in-out;
+}
+
+/* Add a subtle pulse animation for errors */
+@keyframes errorPulse {
+  0% { background-color: rgba(255, 76, 76, 0.3); }
+  50% { background-color: rgba(255, 76, 76, 0.1); }
+  100% { background-color: rgba(255, 76, 76, 0.1); }
+}
+
+/* SearchableField Customizations */
+.uni-selection .searchable-field {
+  width: 100%;
+  position: relative;
+}
+
+/* When dropdown is open/focused, give it the highest z-index */
+.uni-selection .searchable-field:focus-within {
+  z-index: 10000 !important; /* Always on top when focused/active */
+}
+
+/* Style for dropdown results - always on top */
+.uni-selection .search-results {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+  background: white;
+  z-index: 10001 !important; /* Always one higher than the focused field */
+  position: absolute;
+}
+
+/* Style for upward dropdowns - maintain same high z-index */
+.uni-selection .search-results.position-above {
+  z-index: 10001 !important; /* Same high z-index for consistency */
+  margin-bottom: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-content-comparison {
+    width: 95%;
+    max-height: 90vh;
+    z-index: 9999; /* Ensure modal is always at a high level */
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .program-field-banner {
+    padding: 10px;
+  }
+
+  .program-field-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .selection-row {
+    padding: 12px;
+    position: relative;
+  }
+
+  /* Adjust selected university display for mobile */
+  .selected-university {
+    max-width: calc(100% - 55px); /* Less space needed for smaller X button */
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+  }
+
+  .remove-selection-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    margin-top: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    background: rgba(255, 76, 76, 0.12);
+  }
+
+  /* Touch-specific behavior */
+  @media (hover: none) {
+    .selection-row.active-row .remove-selection-button {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  .uni-counter {
+    margin-top: 18px;
+  }
+
+  .remove-selection-button {
+    margin-top: 18px;
+  }
+
+  .modal-footer {
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+
+  .footer-left {
+    margin-bottom: 8px;
+  }
+
+  .footer-right {
+    justify-content: space-between;
+    margin-left: 0;
+  }
+
+  .add-university-button,
+  .cancel-button, 
+  .compare-button {
+    width: 100%;
+    padding: 8px 16px;
+    min-width: 0;
+  }
+  
+  .footer-right .cancel-button, 
+  .footer-right .compare-button {
+    width: 48%;
+  }
+
+  /* Adjust for mobile devices - ensure dropdowns always appear on top */
+  .uni-selection .searchable-field {
+    z-index: 25; /* Higher base z-index on mobile */
+  }
+  
+  .uni-selection .searchable-field:focus-within {
+    z-index: 10000 !important; /* Extremely high z-index when focused on mobile */
+  }
+  
+  .uni-selection .search-results {
+    z-index: 10001 !important; /* Always one higher than the focused field */
+  }
+
+  /* Make sure active elements are always on top regardless of stacking context */
+  .selection-row.active-row .searchable-field:focus-within {
+    z-index: 10000 !important; /* Force to highest level */
+  }
+
+  .selection-row.active-row .search-results {
+    z-index: 10001 !important; /* One higher than its container */
+  }
+
+  /* Improve mobile dropdown experience */
+  .search-results {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-height: 60vh; /* Taller on mobile */
+  }
+  
+  .search-result-item {
+    padding: 14px; /* Larger touch targets on mobile */
+    min-height: 42px; /* Ensure minimum height for better touch */
+  }
+  
+  /* Fix for iOS scrolling */
+  .search-results-list {
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px; /* Extra space at bottom of scrollable area */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-title {
+    font-size: 0.875rem;
+  }
+
+  .selection-row {
+    padding: 10px;
+    padding-top: 40px; /* Provide more space for the remove button */
+  }
+
+  /* Further adjust for very small screens */
+  .selected-university {
+    max-width: calc(100% - 45px);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .remove-selection-button {
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+  }
+
+  .uni-counter {
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    margin-top: 20px;
+  }
+  
+  .uni-selection .searchable-field label {
+    font-size: 0.8125rem;
+  }
+  
+  .program-field-label,
+  .program-field-value {
+    font-size: 0.8125rem;
+  }
+  
+  .modal-footer {
+    padding: 10px 12px;
+  }
+  
+  .add-university-button,
+  .cancel-button,
+  .compare-button {
+    font-size: 0.8125rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Scrollbar Styling */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(26, 105, 133, 0.2);
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 105, 133, 0.3);
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+  .modal-body {
+    padding-bottom: 40px;
+  }
+  
+  .uni-selection .search-input {
+    font-size: 16px;
+  }
+}
+
+/* Highlight effect for comparison results */
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(64, 138, 226, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(64, 138, 226, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(64, 138, 226, 0);
+  }
+}
+
+.highlight-results {
+  animation: highlightPulse 2.5s ease-out 1;
+  position: relative;
+}
+
+.highlight-results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(64, 138, 226, 0.15);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
+  animation: fadeOut 2.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  70% { opacity: 0.7; }
+  100% { opacity: 0; }
+}

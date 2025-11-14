@@ -1,0 +1,261 @@
+.department-view-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-color, #f8f9fa);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Match the admin component card styling exactly */
+.faculty-management-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: var(--section-gap, 2rem);
+  box-shadow: 0 4px 24px 0 rgba(26, 105, 133, 0.08), 0 1.5px 6px 0 rgba(26, 105, 133, 0.04);
+  border: 1px solid var(--border-color-light, #dee5ec);
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.faculty-management-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(26, 105, 133, 0.13), 0 2px 8px 0 rgba(26, 105, 133, 0.07);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.faculty-management-card h3 {
+  font-size: clamp(1.2rem, 2.8vw, 1.4rem);
+  margin-bottom: 1.5rem;
+  color: var(--primary-color-dark, #0a3d4e);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.faculty-management-card .admin-controls-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.faculty-management-card .admin-controls-row {
+  margin-bottom: 0;
+}
+
+.faculty-table-container {
+  margin-top: 1.5rem;
+}
+
+/* Override any dark backgrounds from faculty table */
+.faculty-table-container .admin-table-container,
+.faculty-table-container .admin-table-faculty-container {
+  background: rgb(255, 254, 254) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Loading and error message styling to match admin component */
+.loading-indicator.card,
+.error-message.card,
+.no-data-message.card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(26, 105, 133, 0.06);
+  padding: 1.25rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  text-align: center;
+}
+
+/* Back button styling to match admin header */
+.back-to-admin-button {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-small, 0.9rem);
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 123, 255, 0.1);
+  border: 1px solid var(--primary-color, #007bff);
+  border-radius: var(--border-radius-medium, 8px);
+  color: var(--primary-color, #007bff);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.back-to-admin-button:hover {
+  background: var(--primary-color, #007bff);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Admin controls styling to match exactly */
+.admin-controls-wrapper {
+  max-width: 10000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.admin-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0;
+  margin-bottom: var(--section-gap, 2rem);
+  min-height: 60px;
+}
+
+.admin-action-buttons-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  height: fit-content;
+}
+
+.admin-search-input {
+  flex-grow: 1;
+  max-width: 400px;
+  padding: 0.6rem 0.8rem;
+  font-size: var(--font-size-small, 0.9rem);
+  border: 2px solid var(--primary-color, #007bff);
+  border-radius: var(--border-radius-medium, 8px);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  color: var(--primary-color-dark, #0a3d4e);
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(26, 105, 133, 0.15), 0 2px 4px rgba(26, 105, 133, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color-medium, #1a6985);
+  background: rgba(233, 246, 252, 0.95);
+  box-shadow: 0 0 0 4px rgba(26, 105, 133, 0.25), 0 6px 20px rgba(26, 105, 133, 0.2);
+  transform: translateY(-1px);
+}
+
+.admin-search-input:hover {
+  border-color: var(--primary-color-medium, #1a6985);
+  background: rgba(233, 246, 252, 0.95);
+  box-shadow: 0 6px 20px rgba(26, 105, 133, 0.2), 0 4px 8px rgba(26, 105, 133, 0.15);
+  transform: translateY(-2px);
+}
+
+.admin-search-input::placeholder {
+  color: var(--text-color-secondary, #5a6773);
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .department-view-container {
+    padding: 1rem;
+  }
+  
+  .department-view-header,
+  .faculty-section {
+    padding: 1rem;
+  }
+  
+  .department-details-card {
+    padding: 1rem;
+  }
+  
+  .admin-controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .admin-search-input {
+    max-width: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .department-view-container {
+    background-color: #1a1a1a;
+  }
+  
+  .department-view-header,
+  .faculty-section {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .department-details-card {
+    background: #3a3a3a;
+  }
+  
+  .loading-indicator,
+  .no-data-message {
+    background: #2d2d2d;
+    border-color: #404040;
+    color: #a0a0a0;
+  }
+}
+
+/* Faculty education formatting */
+.faculty-education {
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* Spinner animation for loading states */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+/* Degree column styling */
+.faculty-degree-column {
+  max-width: 250px;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.faculty-degree-column:empty:after {
+  content: '—';
+  color: #999;
+  font-style: italic;
+}
+
+/* Styling for different degree types */
+.degree-bachelor {
+  border-left: 3px solid #28a745;
+  padding-left: 8px;
+}
+
+.degree-master {
+  border-left: 3px solid #ffc107;
+  padding-left: 8px;
+}
+
+.degree-phd {
+  border-left: 3px solid #dc3545;
+  padding-left: 8px;
+}
+
+.faculty-profile-link {
+  color: var(--primary-color, #007bff);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.faculty-profile-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
